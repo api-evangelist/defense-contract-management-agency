@@ -1,42 +1,36 @@
 # Defense Contract Management Agency (defense-contract-management-agency)
-The Defense Contract Management Agency is, first and foremost, a product delivery organization. Our nations warfighters expect our defense industry to produce and deliver the equipment they need to fight, survive and win. DCMAs integrated team of acquisition and support professionals makes this happen.
+
+The Defense Contract Management Agency (DCMA) is the Department of Defense component that works directly with defense suppliers to help ensure that DoD, federal, and allied government supplies and services are delivered on time, at projected cost, and meet performance requirements. DCMA performs contract administration, quality assurance, and earned value management oversight, but does not currently expose a public developer API.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/defense-contract-management-agency/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Contract 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **x-type:** government
+- **Position:** Consuming
+- **Access:** 3rd-Party
 
-## Tags:
+## Tags
 
- - Federal Government
+- Federal Government, Defense, Department of Defense, Contract Management, Acquisition, Earned Value Management
 
 ## Timestamps
 
-- **Created:** 2024-12-03 
-- **Modified:** 2024-12-22 
+- **Created:** 2024-12-03
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Defense Contract Management Agency
-The Office of Acquisition Policy and Innovation (API), a division of Acquisition Enablers, is the central office for major defense authorization performance assessment, root cause analysis, and earned value management within the Department of Defense (DoD). ... Defense Contract Management Agency. Data Analytics. Data Analytics: Using data to ...
+No public developer APIs are currently published by DCMA. The agency provides contract administration and acquisition oversight information through its website and the OSD Acquisition Policy and Innovation pages.
 
-**Human URL:** [https://www.acq.osd.mil/asda/dpc/api/data-analytics.html](https://www.acq.osd.mil/asda/dpc/api/data-analytics.html)
+## Common Properties
 
-
-#### Tags:
-
- - API
-
-#### Properties
-
-- [Documentation](https://www.acq.osd.mil/asda/dpc/api/data-analytics.html)
+- [Website](https://www.dcma.mil)
+- [About](https://www.dcma.mil/About-Us/)
+- [News](https://www.dcma.mil/News/)
+- [Acquisition Policy and Innovation](https://www.acq.osd.mil/asda/dpc/api/data-analytics.html)
 
 ## Maintainers
 
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
-
+- **Kin Lane** - kin@apievangelist.com
