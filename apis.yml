@@ -28,6 +28,13 @@ position: Consuming
 specificationVersion: '0.23'
 kind: government
 tags:
+  - Federal-Government
+  - Defense
+  - Department of Defense
+  - Contract Management
+  - Acquisition
+  - Earned Value Management
+tags_raw:
   - Federal Government
   - Defense
   - Department of Defense
