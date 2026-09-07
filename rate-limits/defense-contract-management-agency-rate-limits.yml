@@ -1,58 +1,40 @@
 specification: API Commons Rate Limits
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://www.dcma.mil/ (HTTP 403 to this crawler) and public search of DCMA / DoD acquisition
+  surfaces; DCMA publishes no API, and therefore no rate limit policy, quota or throttling
+  response header contract.
 provider: Defense Contract Management Agency
 providerId: defense-contract-management-agency
 created: '2026-05-22'
-modified: '2026-05-22'
+modified: '2026-09-07'
 tags:
-- Federal Government
-- Defense
-- Department of Defense
-- Contract Management
-- Acquisition
-- Earned Value Management
-- Rate Limiting
-- Quotas
-- Throttling
-description: Scaffolded rate limit definitions for the Defense Contract Management Agency API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced with published provider
-  limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-- tier: free
-  name: Free Tier Default
-  scope: api-key
-  metric: requests_per_minute
-  limit: 10
-  burst: 20
-  timeFrame: minute
-  applies:
-  - https://defense-contract-management-agency.example/api
-  description: Default per-token request rate for the free tier. Bursts above the limit return HTTP 429 with Retry-After.
-- tier: pro
-  name: Pro Tier Default
-  scope: api-key
-  metric: requests_per_minute
-  limit: 120
-  burst: 240
-  timeFrame: minute
-  applies:
-  - https://defense-contract-management-agency.example/api
-  description: Higher rate envelope for paid plans; reconcile against published commercial terms.
-recoveryStrategies:
-- name: Exponential Backoff
-  description: Wait Retry-After seconds (or back off exponentially up to 60s) before retrying.
-- name: Queue and Retry
-  description: Submit bulk work in batches under the burst envelope.
+  - Federal Government
+  - Defense
+  - Department of Defense
+  - Contract Management
+  - Acquisition
+  - Earned Value Management
+description: >-
+  No published rate limits. DCMA exposes no public developer API, so there is no documented
+  limit, burst envelope, quota window, 429 behaviour or RateLimit-* response header contract
+  to record. An honest zero.
+  THIS FILE REPLACES A FABRICATED SCAFFOLD. The prior version invented free/pro tiers
+  (10 and 120 requests per minute, bursts of 20 and 240) and a full X-RateLimit-* /
+  Retry-After header contract against the placeholder host
+  https://defense-contract-management-agency.example/api. None of it was published by DCMA,
+  and it was crediting the agency with a runtime rate-limit signal it does not emit.
+limit_count: 0
+limits: []
+headers: {}
+responseCodes: {}
+recoveryStrategies: []
 notes:
-- Replace scaffold values with the provider's published rate limit policy.
+  - No DCMA developer program or public API base URL exists to carry a rate limit policy.
+  - >-
+    DCMA contract administration eTools are migrating into the DoD Procurement Integrated
+    Enterprise Environment (PIEE), which is operated by the Department of Defense rather than
+    by DCMA; any limits there belong to PIEE, not to this record.

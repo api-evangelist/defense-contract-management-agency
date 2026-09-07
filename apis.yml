@@ -53,9 +53,11 @@ tags_raw:
   - Acquisition
   - Earned Value Management
 created: '2024-12-03'
-modified: '2026-04-28'
+modified: '2026-09-07'
 apis: []
 common:
+  - type: LLMsTxt
+    url: llms/defense-contract-management-agency-llms.txt
   - type: DomainSecurity
     url: security/defense-contract-management-agency-domain-security.yml
   - type: LinkedIn
@@ -71,3 +73,29 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-07'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: >-
+    www.dcma.mil is served from the DoD Public Web Akamai edge (CNAME
+    www.dodpw.defense.gov.edgekey.net) and returned HTTP 403 "Access Denied" to every request
+    from this run — site root, /robots.txt, all nine /.well-known/ paths, /openapi.json and even
+    static PDF assets under /Portals/ — with a full browser User-Agent and header set, so no page
+    of the agency's own surface could be read to confirm or rule out a developer program.
+  evidence:
+    - url: https://www.dcma.mil/
+      status: 403
+    - url: https://www.dcma.mil/robots.txt
+      status: 403
+    - url: https://www.dcma.mil/.well-known/security.txt
+      status: 403
+    - url: https://www.dcma.mil/Portals/31/Documents/Policy/DCMA_MAN_2303-01.pdf
+      status: 403
+    - url: https://www.acq.osd.mil/asda/dpc/api/data-analytics.html
+      status: 200
+  checked: '2026-09-07'

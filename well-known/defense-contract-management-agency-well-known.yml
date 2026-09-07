@@ -1,0 +1,68 @@
+generated: '2026-09-07'
+method: probed
+source: live HTTPS probes of every host this record knows
+provider: Defense Contract Management Agency
+providerId: defense-contract-management-agency
+description: >-
+  Named-path /.well-known/ probe of every host on record for the Defense Contract Management
+  Agency. NOTHING WAS SERVED. www.dcma.mil sits behind the DoD Public Web Akamai edge
+  (CNAME www.dodpw.defense.gov.edgekey.net) which answers HTTP 403 "Access Denied" to this
+  crawler on EVERY path — including the site root and static PDF assets under /Portals/ —
+  so these 403s record OUR access wall, not an assertion that the agency does or does not
+  serve these documents. No WellKnown or SecurityTxt pointer is wired in apis.yml, because
+  no path returned a 200 carrying a real document.
+hosts:
+  - host: www.dcma.mil
+    note: >-
+      Primary agency web host. Akamai DoD Public Web edge returns 403 Access Denied to this
+      crawler on every request, browser User-Agent and full browser header set included.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 403
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+        file: null
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 403
+        file: null
+  - host: dcma.mil
+    note: >-
+      Apex domain does not resolve (no A record); only the www host is published. DNS-level
+      records exist (DNSSEC, SPF, DMARC p=reject) and are captured in
+      security/defense-contract-management-agency-domain-security.yml.
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        file: null
+        note: DNS resolution failure — host does not resolve.
+  - host: www.acq.osd.mil
+    note: >-
+      Not a DCMA-owned host. Probed only because apis.yml carries an OUSD A&S
+      "Acquisition Policy and Innovation" link property pointing at it; recorded here for
+      completeness and NOT credited to DCMA.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null

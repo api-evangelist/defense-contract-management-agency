@@ -1,0 +1,58 @@
+# Defense Contract Management Agency (DCMA)
+
+> The Defense Contract Management Agency is the Department of Defense component that works
+> directly with defense suppliers to help ensure that DoD, federal, and allied government
+> supplies and services are delivered on time, at projected cost, and meet performance
+> requirements. DCMA performs contract administration, quality assurance, and earned value
+> management oversight.
+
+Generated: 2026-09-07
+Method: generated
+Source: apis.yml + probed artifacts in this repository (api-evangelist/defense-contract-management-agency)
+
+## API surface
+
+DCMA publishes **no public developer API**. There is no developer portal, no OpenAPI or other
+machine-readable contract, no SDK, no MCP server and no agent card on any host this record
+knows. DCMA's contract administration eTools — the contract administration services directory,
+shared data warehouse single sign-on, commercial item determination, audit tracking and action
+tool, delivery schedule manager and final contract closeout — have been migrating into the
+Procurement Integrated Enterprise Environment (PIEE, https://piee.eb.mil), a Department of
+Defense platform reached with a government credential. PIEE is operated by DoD, not by DCMA,
+so nothing served there is attributed to this record.
+
+## Access note for automated clients
+
+www.dcma.mil is served from the DoD Public Web Akamai edge
+(CNAME www.dodpw.defense.gov.edgekey.net) and returns **HTTP 403 Access Denied** to
+non-browser clients on every path, including the site root and static PDF assets under
+/Portals/. Probes of /.well-known/security.txt, /.well-known/api-catalog,
+/.well-known/openid-configuration, /.well-known/oauth-authorization-server,
+/.well-known/oauth-protected-resource, /.well-known/ai-plugin.json,
+/.well-known/agent-card.json and /.well-known/agent.json all returned 403. Those 403s record
+this crawler's access wall, not a statement about what the agency serves to a browser.
+
+## Links
+
+- [Website](https://www.dcma.mil): Agency home (403 to automated clients).
+- [About DCMA](https://www.dcma.mil/About-Us/): Mission, organization and leadership.
+- [News](https://www.dcma.mil/News/): Agency news releases.
+- [LinkedIn](https://www.linkedin.com/company/dcma): Agency LinkedIn presence.
+- [OUSD A&S Data Analytics](https://www.acq.osd.mil/asda/dpc/api/data-analytics.html): Office of the
+  Assistant Secretary of Defense for Acquisition data-analytics page (OSD-owned, not DCMA-owned);
+  points at Advana (https://advana.data.mil), the DoD enterprise data platform, which is
+  credential-gated.
+
+## Artifacts in this profile
+
+- [Domain security](security/defense-contract-management-agency-domain-security.yml): probed TLS/DNSSEC/SPF/DMARC posture for dcma.mil.
+- [Well-known probe](well-known/defense-contract-management-agency-well-known.yml): named-path /.well-known/ probe record; nothing served to this crawler.
+- [Plans](plans/defense-contract-management-agency-plans-pricing.yml): plan_count 0 — no published API plans or pricing.
+- [Rate limits](rate-limits/defense-contract-management-agency-rate-limits.yml): limit_count 0 — no published rate limit policy.
+
+## Not here, and why
+
+- No OpenAPI, AsyncAPI, GraphQL SDL, gRPC .proto or WSDL contract was found on any host.
+- No MCP server, agent card, agent skill, SDK package, CLI, sandbox, changelog or status page.
+- No security.txt, vulnerability disclosure policy or trust center was retrievable.
+- This is a third-party profile maintained by API Evangelist. DCMA does not operate it.
