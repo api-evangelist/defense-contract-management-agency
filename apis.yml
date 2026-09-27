@@ -39,7 +39,7 @@ position: Consuming
 specificationVersion: '0.23'
 kind: government
 tags:
-  - Federal-Government
+  - Federal Government
   - Defense
   - Department of Defense
   - Contract Management
@@ -52,6 +52,7 @@ tags_raw:
   - Contract Management
   - Acquisition
   - Earned Value Management
+  - Federal-Government
 created: '2024-12-03'
 modified: '2026-09-07'
 apis: []
